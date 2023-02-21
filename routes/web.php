@@ -20,4 +20,4 @@ Route::get('/', function () {
 // 備品の登録画面の表示
 Route::get('/create', [BoxController::class, 'create'])->name('box.create');
 // 備品の登録処理
-Route::post('/store', [BookController::class, 'store'])->name('box.store');
+Route::post('/', [BoxController::class, 'store'])->name('box.store');

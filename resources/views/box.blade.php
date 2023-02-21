@@ -1,7 +1,7 @@
 <div>
 <div class="container small">
   <h1>PCを登録</h1>
-  <form action="{{ route('box.store') }}" method="POST">
+  <form action="{{ route('post.store') }}" method="POST">
   @csrf
     <fieldset>
         <div class="form-group">
@@ -21,6 +21,11 @@
                 <option value="DELL Optiplex3020">DELL Optiplex3020</option>
                 <option value="HP DESK 600G3SFF">HP DESK 600G3SFF</option>
             </select>
+            <label for="post">{{ __('種類') }}<span class="badge badge-danger ml-2">{{ __('≪必須≫') }}</span></label>
+            <select name="box_type" id="box_PC">
+                <option value="デスクトップ">デスクトップ</option>
+                <option value="ノートPC">ノートPC</option>
+            </select>
             <label for="book_name">{{ __('部署') }}<span class="badge badge-danger ml-2">{{ __('≪必須≫') }}</span></label>
             <select name="box_group" id="book_name">
                 <option value="本社">本社</option>
@@ -39,6 +44,7 @@
                 <option value="商品開発課">商品開発課</option>
                 <option value="購買課">購買課</option>
                 <option value="生産管理課">生産管理課</option>
+                <option value="プレゼン_商談室">プレゼン室 / 商談室</option>
                 <option value="余り">余り</option>
             </select>
             <label for="book_name">{{ __('ユーザーID') }}<span class="badge badge-danger ml-2">{{ __('≪必須≫') }}</span></label>
@@ -59,15 +65,53 @@
 </div>
 <div>
 <h2>備品管理</h2>
-<h3>本社＜事務所＞</h3>
-<h3>第五工場＜工場＞</h3>
-<h3>第一工場＜事務所＞</h3>
-<h3>第一工場＜工場＞</h3>
-<h3>第二工場＜事務所＞</h3>
-<h3>第二工場＜工場＞</h3>
-<h3>第三工場＜事務所＞</h3>
-<h3>第三工場＜工場＞</h3>
-<h3>第四工場＜事務所＞</h3>
-<h3>第四工場＜工場＞</h3>
-<h4>余り</h4>
+<h3>本社</h3>
+<table>
+<th>PC機種名</th>
+<th>種類</th>
+<th>ユーザーID</th>
+<th>部署</th>
+<th>名前</th>
+@foreach($posts as $post)
+@if($post['box_group'] === "本社")
+<tr>
+<td>{{$post->box_PC}}</td>
+<td>{{$post->box_type}}</td>
+<td>{{$post->box_id}}</td>
+<td>{{$post->box_group}}</td>
+<td>{{$post->box_name}}</td>
+</tr>
+@endif
+@endforeach
+</table>
+<h3>経理部</h3>
+<table>
+<th>PC機種名</th>
+<th>種類</th>
+<th>ユーザーID</th>
+<th>部署</th>
+<th>名前</th>
+@foreach($posts as $post)
+@if($post['box_group'] === "経理部")
+<tr>
+<td>{{$post->box_PC}}</td>
+<td>{{$post->box_type}}</td>
+<td>{{$post->box_id}}</td>
+<td>{{$post->box_group}}</td>
+<td>{{$post->box_name}}</td>
+</tr>
+@endif
+@endforeach
+</table>
 </div>
+<!-- <th>本社＜事務所＞</th>
+<th>第五工場＜工場＞</th>
+<th>第一工場＜事務所＞</th>
+<th>第一工場＜工場＞</th>
+<th>第二工場＜事務所＞</th>
+<th>第二工場＜工場＞</th>
+<th>第三工場＜事務所＞</th>
+<th>第三工場＜工場＞</th>
+<th>第四工場＜事務所＞</th>
+<th>第四工場＜工場＞</th>
+<th>余り</th> -->

@@ -17,7 +17,14 @@ Route::get('/', function () {
     return view('box');
 });
 
+Route::post('/post',[App\Http\Controllers\PostController::class,'store'])->name('post.store');
+Route::post('/posts',[App\Http\Controllers\BoxController::class,'index'])->name('post.index');
+Route::get('/post',[App\Http\Controllers\PostController::class,'create'])->name('post.create');
+Route::get('/',[App\Http\Controllers\BoxController::class,'index'])->name('box.index');
+// Route::get('/post', function () {
+//     return view('post');
+// });
 // 備品の登録画面の表示
-Route::get('/create', [BoxController::class, 'create'])->name('box.create');
+// Route::get('/create', [BoxController::class, 'create'])->name('box.create');
 // 備品の登録処理
-Route::post('/', [BoxController::class, 'store'])->name('box.store');
+// Route::post('/', [BoxController::class, 'store'])->name('box.store');

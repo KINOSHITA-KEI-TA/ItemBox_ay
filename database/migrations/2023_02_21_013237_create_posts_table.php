@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('box_PC')->nullable(true);
+            $table->string('box_type')->nullable(true);
             $table->string('box_group')->nullable(true);
             $table->string('box_name')->nullable(true);
             $table->unsignedBigInteger('box_id')->nullable(true);

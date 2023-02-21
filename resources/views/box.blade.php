@@ -65,6 +65,7 @@
 </div>
 <div>
 <h2>備品管理</h2>
+<div>
 <h3>本社</h3>
 <table>
 <th>PC機種名</th>
@@ -74,16 +75,22 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "本社")
+<div class="box">
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
+<td><button>編集</button></td>
+<td><button>削除</button></td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+<div>
 <h3>製造部</h3>
 <table>
 <th>PC機種名</th>
@@ -93,16 +100,20 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "製造部")
+<div class="box">
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+<div>
 <h3>第一工場</h3>
 <table>
 <th>PC機種名</th>
@@ -112,16 +123,20 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "第一工場")
+<div class="box">
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+<div>
 <h3>第二工場</h3>
 <table>
 <th>PC機種名</th>
@@ -131,16 +146,20 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "第二工場")
+<div>
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+<div>
 <h3>第三工場</h3>
 <table>
 <th>PC機種名</th>
@@ -150,16 +169,20 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "第三工場")
+<div class="box">
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+<div>
 <h3>第四工場</h3>
 <table>
 <th>PC機種名</th>
@@ -169,16 +192,20 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "第四工場")
+<div class="box">
 <tr>
-<td>{{$post->box_PC}}</td>
-<td>{{$post->box_type}}</td>
-<td>{{$post->box_id}}</td>
-<td>{{$post->box_group}}</td>
-<td>{{$post->box_name}}</td>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
 </tr>
+</div>
 @endif
 @endforeach
 </table>
+</div>
+
 </div>
 <!-- <th>本社＜事務所＞</th>
 <th>第五工場＜工場＞</th>

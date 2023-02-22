@@ -13,7 +13,6 @@ class PostController extends Controller
     }
     public function create()
     {
-        // return view('box');
         $posts = Post::all();
         return view('box',['posts' => $posts]);
 
@@ -37,6 +36,7 @@ class PostController extends Controller
         );
         // $post->management = $request->management();
         $post->save();
-        return redirect()->route('post.create');
+        return redirect('/');
+        // return redirect()->route('post.create');
     }
 }

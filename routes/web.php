@@ -21,6 +21,9 @@ Route::post('/post',[App\Http\Controllers\PostController::class,'store'])->name(
 Route::post('/posts',[App\Http\Controllers\BoxController::class,'index'])->name('post.index');
 Route::get('/post',[App\Http\Controllers\PostController::class,'create'])->name('post.create');
 Route::get('/',[App\Http\Controllers\BoxController::class,'index'])->name('box.index');
+
+
+Route::delete('/delete/{postId}',[App\Http\Controllers\BoxController::class,'delete'])->name('box.delete');
 // Route::get('/post', function () {
 //     return view('post');
 // });

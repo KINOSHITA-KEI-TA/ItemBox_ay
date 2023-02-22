@@ -13,4 +13,14 @@ class BoxController extends Controller
        return view('box',['posts' => $posts]);
 
     }
+    public function delete(Request $request)
+    {
+        $postId = (int) $request->route('postId');
+        $post = Post::where('id', $postId)->firstOrFail();
+        $post->delete();
+        return redirect('/');
+        // $post = Post::find($id);
+        // $post->delete();
+        // return view('box',['posts' => $posts]);
+    }
 }

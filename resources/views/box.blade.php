@@ -83,7 +83,12 @@
 <td class="box_content">{{$post->box_group}}</td>
 <td class="box_content">{{$post->box_name}}</td>
 <td><button>編集</button></td>
+<form action="{{ route('box.delete',['postId'=> $post->id])
+    }}" method="post">
+    @method('DELETE')
+    @csrf
 <td><button>削除</button></td>
+</form>
 </tr>
 </div>
 @endif

@@ -1,6 +1,7 @@
 <div>
 <div class="container small">
   <h1>PCを登録</h1>
+  <p><a href="#">管理者ページ</a></p>
   <form action="{{ route('post.store') }}" method="POST">
   @csrf
     <fieldset>
@@ -82,7 +83,11 @@
 <td class="box_content">{{$post->box_id}}</td>
 <td class="box_content">{{$post->box_group}}</td>
 <td class="box_content">{{$post->box_name}}</td>
+<form action="{{ route('box.edit',['postId'=> $post->id])
+    }}" method="post">
+    @method('GET')
 <td><button>編集</button></td>
+</form>
 <form action="{{ route('box.delete',['postId'=> $post->id])
     }}" method="post">
     @method('DELETE')
@@ -112,6 +117,13 @@
 <td class="box_content">{{$post->box_id}}</td>
 <td class="box_content">{{$post->box_group}}</td>
 <td class="box_content">{{$post->box_name}}</td>
+<td><button>編集</button></td>
+<form action="{{ route('box.delete',['postId'=> $post->id])
+    }}" method="post">
+    @method('DELETE')
+    @csrf
+<td><button>削除</button></td>
+</form>
 </tr>
 </div>
 @endif

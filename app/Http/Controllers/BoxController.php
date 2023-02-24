@@ -23,4 +23,13 @@ class BoxController extends Controller
         // $post->delete();
         // return view('box',['posts' => $posts]);
     }
+
+    public function edit(Request $request)
+    {
+        $postId = (int) $request->route('postId');
+        $post = Post::where('id', $postId)->firstOrFail();
+        $post->edit();
+        // $post = Post::find($id);
+        return view('book.edit',compact('box_PC','box_group','box_name','box_id'));
+    }
 }

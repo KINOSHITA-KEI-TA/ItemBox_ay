@@ -24,6 +24,7 @@ Route::get('/',[App\Http\Controllers\BoxController::class,'index'])->name('box.i
 
 
 Route::delete('/delete/{postId}',[App\Http\Controllers\BoxController::class,'delete'])->name('box.delete');
+Route::get('/edit/{postId}',[App\Http\Controllers\BoxController::class,'edit'])->name('box.edit');
 // Route::get('/post', function () {
 //     return view('post');
 // });

@@ -13,18 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('box');
-});
+// Route::get('/', function () {
+//     return view('box');
+// });
 
 Route::post('/post',[App\Http\Controllers\PostController::class,'store'])->name('post.store');
 Route::post('/posts',[App\Http\Controllers\BoxController::class,'index'])->name('post.index');
 Route::get('/post',[App\Http\Controllers\PostController::class,'create'])->name('post.create');
 Route::get('/',[App\Http\Controllers\BoxController::class,'index'])->name('box.index');
-
-
 Route::delete('/delete/{postId}',[App\Http\Controllers\BoxController::class,'delete'])->name('box.delete');
 Route::get('/edit/{postId}',[App\Http\Controllers\BoxController::class,'edit'])->name('box.edit');
+Route::post('/update/{postId}',[App\Http\Controllers\BoxController::class,'update'])->name('box.update');
 // Route::get('/post', function () {
 //     return view('post');
 // });

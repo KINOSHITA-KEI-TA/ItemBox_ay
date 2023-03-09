@@ -28,8 +28,20 @@ class BoxController extends Controller
     {
         $postId = (int) $request->route('postId');
         $post = Post::where('id', $postId)->firstOrFail();
-        $post->edit();
+        // $post->edit();
         // $post = Post::find($id);
-        return view('book.edit',compact('box_PC','box_group','box_name','box_id'));
+        return view('edit',compact('post'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->box_PC = $request->input('box_PC');
+        $post->box_type = $request->input('box_type');
+        $post->box_group = $request->input('box_group');
+        $post->box_name = $request->input('box_name');
+        $post->box_id = $request->input('box_id');
+        $post->save();
+        return redirect('/')->with('success', '更新しました');
     }
 }

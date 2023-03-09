@@ -100,6 +100,7 @@
 @endforeach
 </table>
 </div>
+
 <div>
 <h3>製造部</h3>
 <table>
@@ -209,6 +210,29 @@
 <th>名前</th>
 @foreach($posts as $post)
 @if($post['box_group'] === "第四工場")
+<div class="box">
+<tr>
+<td class="box_content">{{$post->box_PC}}</td>
+<td class="box_content">{{$post->box_type}}</td>
+<td class="box_content">{{$post->box_id}}</td>
+<td class="box_content">{{$post->box_group}}</td>
+<td class="box_content">{{$post->box_name}}</td>
+</tr>
+</div>
+@endif
+@endforeach
+</table>
+</div>
+<div>
+<h3>第五工場</h3>
+<table>
+<th>PC機種名</th>
+<th>種類</th>
+<th>ユーザーID</th>
+<th>部署</th>
+<th>名前</th>
+@foreach($posts as $post)
+@if($post['box_group'] === "第五工場")
 <div class="box">
 <tr>
 <td class="box_content">{{$post->box_PC}}</td>

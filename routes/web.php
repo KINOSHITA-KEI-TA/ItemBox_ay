@@ -31,3 +31,12 @@ Route::post('/update/{postId}',[App\Http\Controllers\BoxController::class,'updat
 // Route::get('/create', [BoxController::class, 'create'])->name('box.create');
 // 備品の登録処理
 // Route::post('/', [BoxController::class, 'store'])->name('box.store');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
